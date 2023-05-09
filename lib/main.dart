@@ -1,10 +1,20 @@
 import 'package:demo2/utils/routes/routes.dart';
+import 'package:flutter/services.dart';
 import 'package:demo2/utils/routes/routes_name.dart';
 import 'package:demo2/view_model/auth_view_,model.dart';
 import 'package:demo2/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+   await SystemChrome.setPreferredOrientations(
+     [
+       DeviceOrientation.portraitUp,
+       DeviceOrientation.portraitDown,
+       DeviceOrientation.landscapeRight,
+       DeviceOrientation.landscapeLeft,
+     ]
+   );
   runApp(MyApp());
 }
 
